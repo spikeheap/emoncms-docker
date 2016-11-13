@@ -1,38 +1,13 @@
 <?php
 
 // Docker Emoncms Settings
+// The following are set elsewhere using environment variables:
+//   - MySQL database settings
+//   - Redis
+//   - MQTT
 
-//1 #### Mysql database settings
-    $server   = $_ENV["MYSQL_HOST"];
-    $database = $_ENV["MYSQL_DATABASE"];
-    $username = $_ENV["MYSQL_USER"];
-    $password = $_ENV["MYSQL_PASSWORD"];
-    $port     = "3306";
-
-    // Skip database setup test - set to false once database has been setup.
+// Skip database setup test - set to false once database has been setup.
     $dbtest = true;
-
-
-//2 #### Redis
-    // Note that boolean values need to be coerced into 'real' booleans from their string values
-    $redis_enabled =  isset($_ENV["REDIS_ENABLED"]) ? $_ENV["REDIS_ENABLED"] === 'true' : false;
-    $redis_server = array(  'host'   =>  isset($_ENV["REDIS_HOST"])   ? $_ENV["REDIS_HOST"]   : 'localhost',
-                            'port'   =>  isset($_ENV["REDIS_PORT"])   ? $_ENV["REDIS_PORT"]   : 6379,
-                            'auth'   =>  isset($_ENV["REDIS_AUTH"])   ? $_ENV["REDIS_AUTH"]   : '',
-                            'prefix' =>  isset($_ENV["REDIS_PREFIX"]) ? $_ENV["REDIS_PREFIX"] : 'emoncms');
-
-
-//3 #### MQTT
-    // The 'subscriber' topic format is rx/* - where * is the emoncms input node number.
-    // The 'publisher' topic format is user selectable from the 'Publish to MQTT' input process, for example power/solar
-    $mqtt_enabled = false;          // Activate MQTT by changing to true
-    $mqtt_server = array( 'host'     => 'localhost',
-                          'port'     => 1883,
-                          'user'     => '',
-                          'password' => '',
-                          'basetopic'=> 'emon'
-                          );
-
 
 //4 #### Engine settings
     $feed_settings = array(
