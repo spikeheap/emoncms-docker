@@ -1,25 +1,14 @@
 <?php
 
 // Docker Emoncms Settings
-
-    // Skip database setup test - set to false once database has been setup.
-    $dbtest = true;
-
-
-
+// The following are set elsewhere using environment variables:
+//   - MySQL database settings
+//   - Redis
+//   - MQTT
 
 
-//3 #### MQTT
-    // The 'subscriber' topic format is rx/* - where * is the emoncms input node number.
-    // The 'publisher' topic format is user selectable from the 'Publish to MQTT' input process, for example power/solar
-    $mqtt_enabled = false;          // Activate MQTT by changing to true
-    $mqtt_server = array( 'host'     => 'localhost',
-                          'port'     => 1883,
-                          'user'     => '',
-                          'password' => '',
-                          'basetopic'=> 'emon'
-                          );
-
+// Skip database setup test - set to false once database has been setup.
+$dbtest = true;
 
 //4 #### Engine settings
     $feed_settings = array(
