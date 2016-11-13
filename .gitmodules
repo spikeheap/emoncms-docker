@@ -1,4 +1,4 @@
 [submodule "emoncms"]
 	path = emoncms
-	url = git@github.com:slatehorse/emoncms.git
-  branch = env_vars
+	url = git@github.com:emoncms/emoncms.git
+  branch = master
