@@ -1,4 +1,4 @@
 [submodule "emoncms"]
 	path = emoncms
 	url = git@github.com:emoncms/emoncms.git
-  branch = master
+	branch = master
